@@ -66,3 +66,29 @@ var app7 = new Vue({
     ]
   }
 });
+
+//データとメソッド
+var obj = {
+  foo: 'bar'
+} 
+
+Object.freeze(obj);
+
+var app8 = new Vue({
+  el: '#app-8',
+  data: obj
+});
+
+var data = { a : 1 }
+
+var vm = new Vue({
+  el: '#app-9',
+  data: data,
+});
+
+console.log(vm.$data === data);
+console.log(vm.$el = document.querySelector('#example'));
+
+vm.$watch('a', function (newValue, oldValue) {
+  console.log(`${oldValue} -> ${newValue}`);
+});
