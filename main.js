@@ -92,3 +92,10 @@ console.log(vm.$el = document.querySelector('#example'));
 vm.$watch('a', function (newValue, oldValue) {
   console.log(`${oldValue} -> ${newValue}`);
 });
+
+var app10 = new Vue({
+  el : '#app-10',
+  data : {
+    rawHtml : '<span style="color: red">This should be red.</span>'
+  }
+});

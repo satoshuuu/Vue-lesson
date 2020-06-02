@@ -60,6 +60,11 @@
     <button v-on:click="a = 2">Change it</button>
   </div>
 
+  <div id="app-10">
+    <p>Using mustaches: {{ rawHtml }}</p>
+    <p>Using v-html directive: <span v-html="rawHtml"></span></p>
+  </div>
+
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
   <script src="main.js"></script>
 </body>
