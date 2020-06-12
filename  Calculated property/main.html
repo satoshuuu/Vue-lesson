@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Vue Calculated property</title>
+</head>
+<body>
+  <div id="app">
+    <p>{{ localEmail }}</p>
+  </div>
+
+<!-- 算出プロパティとメソッドの違い -->
+  <div id="app2">
+    <form>
+      <input type="button" value="クリック" v-on:click="onclick">
+    </form>
+    <p>メソッドは再描画に際して常に評価されるのに対して、算出プロパティはそれが依存するプロパティが変更された場合にのみ評価される。</p>
+    <div>算出プロパティ： {{ randomc }}</div>
+    <div>メソッド：{{ randomm() }}</div>
+    <div>現在日時：{{ current }}</div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
