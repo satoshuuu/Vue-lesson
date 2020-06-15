@@ -5,32 +5,41 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Vue directive</title>
+  <link rel="stylesheet" href="../style/style.css">
 </head>
 <body>
-  <div id="app">
+  <div id="app" class="mb">
     <p v-text="message"></p>
   </div>
 
-  <div id="app2">
+  <div id="app2" class="mb">
     <!-- {{}}をMustache構文ではなく文字列として表示 -->
     <p v-pre>{{ message }}</p>
   </div>
 
-  <div id="app3">
+  <div id="app3" class="mb">
     <!-- v-bindを利用することで属性値を操作できる -->
     <a v-bind:href="url">Vue.js公式</a>
   </div>
 
-  <div id="app4">
+  <div id="app4" class="mb">
     <!-- v-bindの省略 -->
     <a :href="url">Vue.js公式</a>
   </div>
 
-  <div id="app5">
+  <div id="app5" class="mb">
     <!-- v-bindを用いる事でブール属性を操作できる -->
     <input type="button" value="クリック" v-bind:disabled="flag">
   </div>
 
+  <div id="app6" class="mb">
+    <!-- v-onディレクティブによりイベントを指定する事ができる -->
+    <button v-on:click="onclick">クリック</button>
+    <!-- v-onは@で省略する事ができる -->
+    <button @click="onclick">クリック</button>
+    <p>{{ message }}</p>
+  </div>
+  
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
   <script src="main.js"></script>
 </body>

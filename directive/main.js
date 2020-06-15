@@ -32,3 +32,15 @@ let app5 = new Vue({
     flag: true,
   }
 });
+
+let app6 = new Vue({
+  el: "#app6",
+  data: {
+    message: ''
+  },
+  methods: {
+    onclick: function() {
+      this.message = new Date().toLocaleString();
+    }
+  }
+})
