@@ -39,7 +39,17 @@
     <button @click="onclick">クリック</button>
     <p>{{ message }}</p>
   </div>
-  
+
+  <div id="app7" class="mb">
+    <div id ="app7-main" v-on:mousemove="onmousemove">
+      screen: {{ screenX }}/{{ screenY }}<br/>
+      page: {{ pageX }}/{{ pageY }}<br/>
+      client: {{ clientX }}/{{ clientY }}<br/>
+      offset: {{ offsetX }}/{{ offsetY }}<br/>
+    </div>
+  </div>
+
+
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
   <script src="main.js"></script>
 </body>
