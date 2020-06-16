@@ -93,6 +93,8 @@
   <div id="app11" class="mb">
     <form>
       <label for="os">お使いのOSは？</label><br>
+      <!-- 複数選択の場合 -->
+      <!-- <select v-model="os" multiple size="3"> -->
       <select id="os" v-model="os">
         <option value="">OSを選択してください</option>
         <option>Windows</option>
@@ -101,6 +103,21 @@
       </select>
     </form>
     <p>回答：{{ os }}</p>
+  </div>
+
+  <div id="app12" class="mb">
+    <form>
+      <label for="temperature">気温</label>
+      <!-- .number修飾子で入力値を数値としてプロパティにバインド -->
+      <input type="text" id="temperature" v-model.number="temperature" v-on:change="onchangetemp"><br>
+      <label for="memo">メモ：</label>
+      <!-- .trim修飾子で入力値の前後の空白を除去する -->
+      <input type="text" id="memo" v-model.trim="memo" v-on:change="onchangememo"><br>
+      <label for="name">氏名：</label>
+      <!-- .lazy修飾子でバインドのタイミングを遅延させる -->
+      <input type="text" id="name" v-model.lazy="myName">
+      <div>こんにちは、{{ myName }}さん！</div>
+    </form>
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>

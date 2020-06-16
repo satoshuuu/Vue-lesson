@@ -98,3 +98,20 @@ let app11 = new Vue({
     os: '',
   }
 });
+
+let app12 = new Vue({
+  el: '#app12',
+  data: {
+    temperature: 0,
+    memo: '',
+    myName: '',
+  },
+  methods: {
+    onchangetemp: function() {
+      console.log(this.temperature.toFixed(1));
+    },
+    onchangememo: function() {
+      console.log('入力値は 「' + this.memo + '」です。')
+    }
+  }
+})
