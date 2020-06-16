@@ -69,4 +69,32 @@ let app7 = new Vue({
       this.offsetY = e.offsetY;
     }
   }
+});
+
+let app8 = new Vue({
+  el: '#app8',
+  data: {
+    pet: 'いぬ',
+  }
+});
+
+let app9 = new Vue ({
+  el: '#app9',
+  data: {
+    agree: true,
+  }
 })
+
+let app10 = new Vue ({
+  el: '#app10',
+  data: {
+    os: ['macOS']
+  }
+});
+
+let app11 = new Vue({
+  el: '#app11',
+  data: {
+    os: '',
+  }
+});
