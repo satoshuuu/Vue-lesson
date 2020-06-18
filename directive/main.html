@@ -120,6 +120,52 @@
     </form>
   </div>
 
+  <!-- v-modelを用いない双方向データバインディング -->
+  <div id="app13" class="mb">
+    <form>
+      <label for="mail">メールアドレス：</label>
+      <textarea id="mail" cols="30" rows="10"
+      v-bind:value="mails.join(';')"
+      v-on:input="mails=$event.target.value.split(';')"></textarea>
+    </form>
+    <ul>
+      <li v-for="mail in mails">
+        {{ mail }}
+      </li>
+    </ul>
+  </div>
+
+  <!-- v-ifを用いた表示の切り替え -->
+  <div id="app14" class="mb">
+    <form>
+      <label for="show">表示/非表示</label>
+      <input type="checkbox" id="show" v-model="show">
+    </form>
+    <div id="panel" v-if="show">
+      <h3>こんにちは</h3>
+      <p>テキストテキストテキストテキストテキストテキスト<br>テキストテキストテキストテキストテキストテキストテキスト<br>テキストテキストテキストテキストテキスト</p>
+    </div>
+    <div v-else>非表示状態です。</div>
+  </div>
+
+  <div id="app15" class="mb">
+    <form>
+      <label for="holiday">祝日：</label><br>
+      <select id="holiday" v-model="holiday">
+        <option value="">祝日を選択してください。</option>
+        <option value="new">元日</option>
+        <option value="child">こどもの日</option>
+        <option value="culture">文化の日</option>
+        <option value="labor">勤労感謝の日</option>
+      </select>
+    </form>
+    <div v-if="holiday==='new'">1月1日。元日（がんじつ）は年の最初の日。</div>
+    <div v-else-if="holiday==='child'">5月5日。こどもの日（こどものひ）とは、日本における国民の祝日の一つで、端午の節句である5月5日に制定されている。</div>
+    <div v-else-if="holiday==='culture'">11月3日。文化の日（ぶんかのひ）は、日本の国民の祝日の一つである。明治天皇の誕生日にあたり、明治期に天長節、昭和初期に明治節として祝日となっていた日である。</div>
+    <div v-else-if="holiday==='labor'">11月23日。勤労感謝の日（きんろうかんしゃのひ）は、日本の国民の祝日の一つである。</div>
+    <div v-else>何も選択されていません</div>
+  </div>
+
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
   <script src="main.js"></script>
 </body>

@@ -104,7 +104,7 @@ let app12 = new Vue({
   data: {
     temperature: 0,
     memo: '',
-    myName: '',
+    myName: '匿名',
   },
   methods: {
     onchangetemp: function() {
@@ -114,4 +114,25 @@ let app12 = new Vue({
       console.log('入力値は 「' + this.memo + '」です。')
     }
   }
-})
+});
+
+let app13 = new Vue({
+  el: '#app13',
+  data: {
+    mails: [],
+  }
+});
+
+let app14 = new Vue({
+  el: '#app14',
+  data: {
+    show: true,
+  }
+});
+
+let app15 = new Vue({
+  el: '#app15',
+  data: {
+    holiday: '',
+  }
+});
