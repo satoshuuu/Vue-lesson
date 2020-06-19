@@ -148,6 +148,19 @@
     <div v-else>非表示状態です。</div>
   </div>
 
+  <!-- v-showでの書き換え(切り替えの頻度が高い時はこっちを使う) -->
+  <div id="app17" class="mb">
+    <form>
+      <label for="show">表示/非表示</label>
+      <input type="checkbox" id="show" v-model="show">
+    </form>
+    <div id="panel" v-show="show">
+      <h3>こんにちは</h3>
+      <p>テキストテキストテキストテキストテキストテキスト<br>テキストテキストテキストテキストテキストテキストテキスト<br>テキストテキストテキストテキストテキスト</p>
+    </div>
+    <div v-show="!show">非表示状態です。</div>
+  </div>
+
   <div id="app15" class="mb">
     <form>
       <label for="holiday">祝日：</label><br>
@@ -164,6 +177,53 @@
     <div v-else-if="holiday==='culture'">11月3日。文化の日（ぶんかのひ）は、日本の国民の祝日の一つである。明治天皇の誕生日にあたり、明治期に天長節、昭和初期に明治節として祝日となっていた日である。</div>
     <div v-else-if="holiday==='labor'">11月23日。勤労感謝の日（きんろうかんしゃのひ）は、日本の国民の祝日の一つである。</div>
     <div v-else>何も選択されていません</div>
+  </div>
+  
+  <!-- 要素の再利用の注意 -->
+  <div id="app16" class="mb">
+    <fieldset>
+      <legend>支払い方法</legend>
+      クレジットカード：
+      <input type="radio" name="pay" value="credit" v-model="pay">
+      銀行振込：
+      <input type="radio" name="pay" value="bank" v-model="pay">
+      <hr>
+      <div v-if="pay === 'credit'">
+        カード番号：
+        <!-- keyを指定する事で、input要素を識別 -->
+        <input type="text" key="credit">
+      </div>
+      <div v-else-if="pay === 'bank'">
+        口座番号：
+        <!-- keyを指定する事で、input要素を識別 -->
+        <input type="text" key="bank">
+      </div>
+    </fieldset>
+  </div>
+
+  <!-- v-forによる繰り返し処理 -->
+  <div id="app18" class="mb">
+    <table>
+      <th>id</th><th>書名</th><th>著者</th><th>価格</th>
+      <!-- iによってインデックス番号も取得できる -->
+      <tr v-for="(b, i) in books">
+        <td>{{ i + 1 }}</td>
+        <td>{{ b.title }}</td>
+        <td>{{ b.author }}</td>
+        <td>{{ b.price }}</td>
+      </tr>
+    </table>
+  </div>
+
+  <!-- オブジェクトのプロパティを繰り返し処理で取得 -->
+  <div id="app19" class="mb">
+    <ul v-for="(value, key, i) in book">
+      <li>{{ key }}：{{ value }}</li>
+    </ul>
+  </div>
+
+  <div id="app20" class="mb">
+    <span v-for="i in 5">{{ i * 2 }} </span>
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>

@@ -136,3 +136,55 @@ let app15 = new Vue({
     holiday: '',
   }
 });
+
+let app16 = new Vue({
+  el: "#app16",
+  data: {
+    pay: 'credit',
+  }
+});
+
+let app17 = new Vue({
+  el: '#app17',
+  data: {
+    show: true,
+  }
+});
+
+let app18 = new Vue({
+  el: '#app18',
+  data: {
+    books: [
+      {
+        title: 'サンプル書籍1',
+        author: '佐藤',
+        price: 1000,
+      },
+      {
+        title: 'サンプル書籍2',
+        author: '田中',
+        price: 1500,
+      },
+      {
+        title: 'サンプル書籍3',
+        author: '西村',
+        price: 800,
+      },
+    ]
+  }
+});
+
+let app19 = new Vue({
+  el: "#app19",
+  data: {
+    book: {
+      title: 'サンプル書籍',
+      author: '佐藤',
+      price: 1000,
+    }
+  }
+});
+
+let app20 = new Vue({
+  el: '#app20',
+})
