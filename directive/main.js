@@ -188,3 +188,68 @@ let app19 = new Vue({
 let app20 = new Vue({
   el: '#app20',
 })
+
+let app21 = new Vue({
+  el: '#app21',
+  data: {
+    books: [
+      {
+        title: 'サンプル書籍1',
+        author: '佐藤',
+        price: 1000,
+      },
+      {
+        title: 'サンプル書籍2',
+        author: '田中',
+        price: 1500,
+      },
+      {
+        title: 'サンプル書籍3',
+        author: '西村',
+        price: 800,
+      },
+    ]
+  },
+  computed: {
+    expensiveBooks: function() {
+      return this.books.filter(function(b) {
+        return b.price >= 1000;
+      })
+    }
+  }
+});
+
+let app22 = new Vue({
+  el: "#app22",
+  data: {
+    songs: [
+      {
+        title: 'インフェルノ',
+        lyrics: '照らすは闇僕らの...',
+        artist: 'Mrs.GreenApple'
+      },
+      {
+        title: '白日',
+        lyrics: '時には誰かを知らず知らずの...',
+        artist: 'King Gnu',
+      },
+    ]
+  }
+});
+
+let app23 = new Vue({
+  el: "#app23",
+  data: {
+    list: ['赤りんご', '青りんご', '黄りんご']
+  },
+  methods: {
+    onclick: function() {
+      // setメソッドを用いる事で更新を通知してくれる
+      Vue.set(this.list, 1, '毒りんご');
+    },
+    onclickDelete: function() {
+      //配列の先頭要素を削除
+      this.list.shift();
+    }
+  }
+})

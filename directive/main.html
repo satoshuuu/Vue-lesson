@@ -222,9 +222,48 @@
     </ul>
   </div>
 
+  <!-- 数値の繰り返し -->
   <div id="app20" class="mb">
     <span v-for="i in 5">{{ i * 2 }} </span>
   </div>
+
+  <!-- for文での絞り込み -->
+  <div id="app21" class="mb">
+    <table>
+      <th>書名</th><th>著者</th><th>価格</th>
+      <tr v-for="b in expensiveBooks">
+        <td>{{ b.title }}</td>
+        <td>{{ b.author }}</td>
+        <td>{{ b.price }}</td>
+      </tr>
+    </table>
+  </div>
+
+  <!-- template要素で複数の要素を束ねる -->
+  <div id="app22" class="mb">
+    <template v-for="s in songs">
+      <header>曲名：{{ s.title }}</header>
+      <div>歌い出し：{{ s.lyrics }}</div>
+      <footer>アーティスト：{{ s.artist }}</footer>
+      <br>
+    </template>
+  </div>
+
+  <!-- 配列の変更を反映する -->
+  <div id="app23" class="mb">
+    <form>
+      <input type="button" value="変更" v-on:click="onclick">
+      <input type="button" value="削除" v-on:click="onclickDelete">
+    </form>
+    <ul>
+      <!-- 
+        v-forディレクティブを伴うリストでの更新では必ずkey属性を指定する
+        指定する事でリスト全体を作り直す必要がなくなる
+      -->
+      <li v-for="item in list" v-bind:key="item">{{ item }}</li>
+    </ul>
+  </div>
+
 
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
   <script src="main.js"></script>
