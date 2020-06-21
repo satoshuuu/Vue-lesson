@@ -252,4 +252,133 @@ let app23 = new Vue({
       this.list.shift();
     }
   }
+});
+
+let app24 = new Vue({
+  el: "#app24",
+  data: {
+    attrs: {
+      size: 20,
+      maxLength: 14,
+      required: true,
+    }
+  }
+});
+
+let app25 = new Vue({
+  el: '#app25',
+  data: {
+    attr: 'width',
+    size: 100
+  },
+});
+
+let app26 = new Vue({
+  el: '#app26',
+  data: {
+    message: `<h3>デスク周りのイメージ</h3>
+      <img src="../image/image2.jpg">`
+  }
+});
+
+let app27 = new Vue({
+  el: '#app27',
+  data: {
+    name: '匿名'
+  }
 })
+
+let app28 = new Vue({
+  el: '#app28',
+  data: {
+    color: {
+      backgroundColor: 'Aqua',
+      color: 'Red',
+    },
+    size: {
+      fontSize: '1.5em'
+    }
+  }
+});
+
+let app29 = new Vue({
+  el: '#app29',
+  data: {
+    message: '皆さん、こんにちは！',
+  }
+});
+
+let app30 = new Vue({
+  el: '#app30',
+});
+
+let app31 = new Vue({
+  el: '#app31',
+  methods: {
+    onsubmit: function(e) {
+      if (!confirm('送信しても良いですか？')) {
+        e.preventDefault();
+        return;
+      }
+    }
+  }
+});
+
+let app32 = new Vue({
+  el: '#app32',
+  data: {
+    result: '-',
+  },
+  methods: {
+    onclick: function(e) {
+      this.result = Math.floor(Math.random() * 100) + 1;
+    }
+  }
+});
+
+let app33 = new Vue({
+  el: '#app33',
+  data: {
+    name: '匿名',
+  },
+  methods: {
+    clear: function() {
+      this.name = '';
+    }
+  }
+});
+
+let app34 = new Vue({
+  el: '#app34',
+  data: {
+    name: '匿名',
+  },
+  methods: {
+    help: function() {
+      window.alert('氏名（漢字）を入力してください');
+    }
+  }
+});
+
+let app35 = new Vue({
+  el: '#app35',
+  data: {
+    pos: {
+      left: 0,
+      top: 0,
+    },
+    show: false,
+  },
+  methods: {
+    onleftclick: function() {
+      this.show = false;
+    },
+    onrightclick: function(e) {
+      this.pos = {
+        top: e.pageY + 'px',
+        left: e.pageX + 'px',
+      };
+      this.show = true;
+    }
+  }
+});

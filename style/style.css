@@ -7,4 +7,38 @@
   height: 150px;
   border: 1px solid black;
 }
+
+[v-cloak] {
+  display: none;
+}
+
+#app30-main {
+  width: 400px;
+  height: 150px;
+  border: 1px solid black;
+}
+
+#app35-main {
+  width: 400px;
+  height: 150px;
+  border: 1px solid black;
+  position: relative;
+}
+
+.app35-menu {
+  border: 1px solid black;
+  position: absolute;
+  padding: 5px 20px;
+  background-color: gray;
+}
+
+.app35-menu > li {
+  list-style-type: none;
+  padding: 5px 10px;
+}
+
+.app35-menu > li > a {
+  text-decoration: none;
+  color: white;
+}
 /*# sourceMappingURL=style.css.map */
