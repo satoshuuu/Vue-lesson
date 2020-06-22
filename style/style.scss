@@ -1,5 +1,13 @@
 .mb {
-  margin-bottom: 20px;;
+  margin-bottom: 50px;
+}
+
+.ml {
+  margin-left: 20px;
+}
+
+.p-mb {
+  margin-bottom: 0;
 }
 
 #app7-main {
@@ -38,4 +46,10 @@
       color: white;
     }
   }
+}
+
+.small-h1 {
+  font-weight: normal;
+  font-size: 24px;
+  margin: 5px;
 }

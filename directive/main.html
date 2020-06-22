@@ -8,31 +8,37 @@
   <link rel="stylesheet" href="../style/style.css">
 </head>
 <body>
-  <div id="app" class="mb">
+  <div id="app" class="mb  ml">
+    <h1 class="small-h1">動作確認1(v-textによる値の設定)</h1>
     <p v-text="message"></p>
   </div>
 
-  <div id="app2" class="mb">
+  <div id="app2" class="mb  ml">
+    <h1 class="small-h1">動作確認2(v-preによりMustache構文を文字列として認識)</h1>
     <!-- {{}}をMustache構文ではなく文字列として表示 -->
     <p v-pre>{{ message }}</p>
   </div>
 
-  <div id="app3" class="mb">
+  <div id="app3" class="mb  ml">
+    <h1 class="small-h1">動作確認3(urlのバインド)</h1>
     <!-- v-bindを利用することで属性値を操作できる -->
     <a v-bind:href="url">Vue.js公式</a>
   </div>
 
-  <div id="app4" class="mb">
+  <div id="app4" class="mb  ml">
+    <h1 class="small-h1">動作確認4(urlのバインド(コードの省略表記ver))</h1>
     <!-- v-bindの省略 -->
     <a :href="url">Vue.js公式</a>
   </div>
 
-  <div id="app5" class="mb">
+  <div id="app5" class="mb  ml">
+    <h1 class="small-h1">動作確認5(v-bindによるdisabledの値のバインド(true))</h1>
     <!-- v-bindを用いる事でブール属性を操作できる -->
     <input type="button" value="クリック" v-bind:disabled="flag">
   </div>
 
-  <div id="app6" class="mb">
+  <div id="app6" class="mb  ml">
+    <h1 class="small-h1">動作確認6(クリックイベント)</h1>
     <!-- v-onディレクティブによりイベントを指定する事ができる -->
     <button v-on:click="onclick">クリック</button>
     <!-- v-onは@で省略する事ができる -->
@@ -40,7 +46,8 @@
     <p>{{ message }}</p>
   </div>
 
-  <div id="app7" class="mb">
+  <div id="app7" class="mb  ml">
+    <h1 class="small-h1">動作確認7(領域内のマウスの位置を表示)</h1>
     <div id ="app7-main" v-on:mousemove="onmousemove">
       screen: {{ screenX }}/{{ screenY }}<br/>
       page: {{ pageX }}/{{ pageY }}<br/>
@@ -50,7 +57,8 @@
   </div>
 
   <!-- ラジオボタン -->
-  <div id="app8" class="mb">
+  <div id="app8" class="mb  ml">
+    <h1 class="small-h1">動作確認8(ラジオボタンの実装)</h1>
     <form>
       <label for="dog">いぬ</label>
       <input type="radio" id="dog" value="いぬ" v-model="pet">
@@ -66,7 +74,8 @@
   </div>
 
   <!-- チェックボックス -->
-  <div id="app9" class="mb">
+  <div id="app9" class="mb  ml">
+    <h1 class="small-h1">動作確認9(チェックボックスの実装)</h1>
     <form>
       <label for="agree">同意する：</label>
       <input type="checkbox" id="agree" v-model="agree">
@@ -76,7 +85,9 @@
     <div>回答：{{ agree }}</div>
   </div>
 
-  <div id="app10" class="mb">
+  <!-- チェックボックス(複数) -->
+  <div id="app10" class="mb  ml">
+    <h1 class="small-h1">動作確認10(複数のチェックボックスの実装)</h1>
     <form>
       <div>お使いのOSは？</div>
       <label for="windows">Windows</label>
@@ -90,7 +101,8 @@
   </div>
 
   <!-- 選択ボックス -->
-  <div id="app11" class="mb">
+  <div id="app11" class="mb  ml">
+    <h1 class="small-h1">動作確認11(選択ボックスの実装)</h1>
     <form>
       <label for="os">お使いのOSは？</label><br>
       <!-- 複数選択の場合 -->
@@ -105,14 +117,19 @@
     <p>回答：{{ os }}</p>
   </div>
 
-  <div id="app12" class="mb">
+  <!-- 修飾子の活用 -->
+  <div id="app12" class="mb  ml">
+    <h1 class="small-h1">動作確認12(修飾子を用いた処理をconsoleに表示)</h1>
     <form>
+      <p class="p-mb">小数点第二位以下を四捨五入</p>
       <label for="temperature">気温</label>
       <!-- .number修飾子で入力値を数値としてプロパティにバインド -->
       <input type="text" id="temperature" v-model.number="temperature" v-on:change="onchangetemp"><br>
+      <p class="p-mb">前後の余白を除去して表示</p>
       <label for="memo">メモ：</label>
       <!-- .trim修飾子で入力値の前後の空白を除去する -->
       <input type="text" id="memo" v-model.trim="memo" v-on:change="onchangememo"><br>
+      <p class="p-mb">バインドのタイミングを遅延(テキストボックスから外れた時点でバインド)</p>
       <label for="name">氏名：</label>
       <!-- .lazy修飾子でバインドのタイミングを遅延させる -->
       <input type="text" id="name" v-model.lazy="myName">
@@ -121,7 +138,8 @@
   </div>
 
   <!-- v-modelを用いない双方向データバインディング -->
-  <div id="app13" class="mb">
+  <div id="app13" class="mb  ml">
+    <h1 class="small-h1">動作確認13(「；」で区切った値の表示)</h1>
     <form>
       <label for="mail">メールアドレス：</label>
       <textarea id="mail" cols="30" rows="10"
@@ -136,7 +154,8 @@
   </div>
 
   <!-- v-ifを用いた表示の切り替え -->
-  <div id="app14" class="mb">
+  <div id="app14" class="mb  ml">
+    <h1 class="small-h1">動作確認14(表示、非表示の切り替え(v-model))</h1>
     <form>
       <label for="show">表示/非表示</label>
       <input type="checkbox" id="show" v-model="show">
@@ -149,7 +168,8 @@
   </div>
 
   <!-- v-showでの書き換え(切り替えの頻度が高い時はこっちを使う) -->
-  <div id="app17" class="mb">
+  <div id="app17" class="mb  ml">
+    <h1 class="small-h1">動作確認17(表示、非表示の切り替え(v-show))</h1>
     <form>
       <label for="show">表示/非表示</label>
       <input type="checkbox" id="show" v-model="show">
@@ -160,8 +180,9 @@
     </div>
     <div v-show="!show">非表示状態です。</div>
   </div>
-
-  <div id="app15" class="mb">
+<!-- 複数の分岐の表現 -->
+  <div id="app15" class="mb  ml">
+    <h1 class="small-h1">動作確認15(分岐の表現)</h1>
     <form>
       <label for="holiday">祝日：</label><br>
       <select id="holiday" v-model="holiday">
@@ -180,7 +201,8 @@
   </div>
   
   <!-- 要素の再利用の注意 -->
-  <div id="app16" class="mb">
+  <div id="app16" class="mb  ml">
+    <h1 class="small-h1">動作確認16(keyによる要素の再利用時の値を修正)</h1>
     <fieldset>
       <legend>支払い方法</legend>
       クレジットカード：
@@ -202,7 +224,8 @@
   </div>
 
   <!-- v-forによる繰り返し処理 -->
-  <div id="app18" class="mb">
+  <div id="app18" class="mb  ml">
+    <h1 class="small-h1">動作確認18(配列の繰り返し処理)</h1>
     <table>
       <th>id</th><th>書名</th><th>著者</th><th>価格</th>
       <!-- iによってインデックス番号も取得できる -->
@@ -216,19 +239,22 @@
   </div>
 
   <!-- オブジェクトのプロパティを繰り返し処理で取得 -->
-  <div id="app19" class="mb">
+  <div id="app19" class="mb  ml">
+    <h1 class="small-h1">動作確認19(プロパティの繰り返し表示)</h1>
     <ul v-for="(value, key, i) in book">
       <li>{{ key }}：{{ value }}</li>
     </ul>
   </div>
 
   <!-- 数値の繰り返し -->
-  <div id="app20" class="mb">
+  <div id="app20" class="mb  ml">
+    <h1 class="small-h1">動作確認20(値の繰り返し(演算))</h1>
     <span v-for="i in 5">{{ i * 2 }} </span>
   </div>
 
   <!-- for文での絞り込み -->
-  <div id="app21" class="mb">
+  <div id="app21" class="mb  ml">
+    <h1 class="small-h1">動作確認21(繰り返しの絞り込み(価格が1000以上))</h1>
     <table>
       <th>書名</th><th>著者</th><th>価格</th>
       <tr v-for="b in expensiveBooks">
@@ -240,7 +266,8 @@
   </div>
 
   <!-- template要素で複数の要素を束ねる -->
-  <div id="app22" class="mb">
+  <div id="app22" class="mb  ml">
+    <h1 class="small-h1">動作確認22(template要素で複数要素の繰り返し)</h1>
     <template v-for="s in songs">
       <header>曲名：{{ s.title }}</header>
       <div>歌い出し：{{ s.lyrics }}</div>
@@ -250,7 +277,8 @@
   </div>
 
   <!-- 配列の変更を反映する -->
-  <div id="app23" class="mb">
+  <div id="app23" class="mb  ml">
+    <h1 class="small-h1">動作確認23(配列の変更、削除)</h1>
     <form>
       <input type="button" value="変更" v-on:click="onclick">
       <input type="button" value="削除" v-on:click="onclickDelete">
@@ -265,7 +293,8 @@
   </div>
 
   <!-- v-bindで複数の属性をまとめて指定する -->
-  <div id="app24" class="mb">
+  <div id="app24" class="mb  ml">
+    <h1 class="small-h1">動作確認24(bindで属性の指定(字数制限など))</h1>
     <form>
       <label for="memo">メモ：</label>
       <input type="text" id="memo" v-bind="attrs">
@@ -273,7 +302,8 @@
   </div>
 
   <!-- JavaScript式から属性値を決定する(動的引数) -->
-  <div id="app25" class="mb">
+  <div id="app25" class="mb  ml">
+    <h1 class="small-h1">動作確認25(属性値の動的な変化)</h1>
     <select v-model="attr">
       <option value="height">高さ</option>
       <option value="width">幅</option>
@@ -283,7 +313,8 @@
   </div>
 
   <!-- HTMLの埋め込み -->
-  <div id="app26" class="mb">
+  <div id="app26" class="mb  ml">
+    <h1 class="small-h1">動作確認26(HTMLの埋め込み)</h1>
     <h2>XSS対策済み</h2>
     <div>{{ message }}</div>
     <h2>XSSの対策無し</h2>
@@ -291,7 +322,8 @@
   </div>
 
   <!-- 値を一度だけバインドする v-once -->
-  <div id="app27" class="mb">
+  <div id="app27" class="mb  ml">
+    <h1 class="small-h1">動作確認27(上の値の固定)</h1>
     <form>
       <label for="name">氏名：</label>
       <input type="text" id="name" v-model="name">
@@ -301,26 +333,30 @@
   </div>
 
   <!-- 複数のスタイル情報を適用させる -->
-  <div id="app28" class="mb">
+  <div id="app28" class="mb  ml">
+    <h1 class="small-h1">動作確認28(スタイルの適用)</h1>
     <div v-bind:style="[ color, size ]">
       皆さん、こんにちは！
     </div>
   </div>
 
   <!-- v-cloakを用いる事で、初期化終了後に表示させる -->
-  <div id="app29" class="mb">
+  <div id="app29" class="mb  ml">
+    <h1 class="small-h1">動作確認29(チラつかない)</h1>
     <p v-cloak>{{ message }}</p>
   </div>
 
   <!-- .prevent修飾子でイベントの規定の動作をキャンセルする -->
-  <div id="app30" class="mb">
+  <div id="app30" class="mb  ml">
+    <h1 class="small-h1">動作確認30(修飾子を用いたイベントのキャンセル)</h1>
     <div id="app30-main" v-on:contextmenu.prevent>
       この領域では、コンテキストメニュー（右クリック）は表示されません。
     </div>
   </div>
 
   <!-- 修飾子を使わずにイベントの規定の動作をキャンセルする -->
-  <div id="app31" class="mb">
+  <div id="app31" class="mb  ml">
+    <h1 class="small-h1">動作確認31(修飾子を用いないイベントのキャンセル)</h1>
     <form v-on:submit="onsubmit">
       <label for="email">メールアドレス：</label>
       <input type="email" name="email" type="email">
@@ -329,13 +365,15 @@
   </div>
 
   <!-- 一度だけしか実行されないハンドラーの登録 -->
-  <div id="app32" class="mb">
+  <div id="app32" class="mb  ml">
+    <h1 class="small-h1">動作確認32(一度だけしか実行されない)</h1>
     <input type="button" value="結果表示" v-on:click.once="onclick">
     <p>今日のラッキー度は{{ result }}％です。</p>
   </div>
 
   <!-- キーイベントでのキーを識別する キー修飾子 -->
-  <div id="app33" class="mb">
+  <div id="app33" class="mb  ml">
+    <h1 class="small-h1">動作確認33(escキーで全消去)</h1>
     <form>
       <label for="name">氏名：</label>
       <!-- 27はescキーのキーコード -->
@@ -344,7 +382,8 @@
   </div>
 
   <!-- システムキーとの組み合わせを検知する -->
-  <div id="app34" class="mb">
+  <div id="app34" class="mb  ml">
+    <h1 class="small-h1">動作確認34</h1>
     <p>テキストボックス内で「alt + q」でヘルプの表示</p>
     <form>
       <label for="name">氏名：</label>
@@ -355,7 +394,8 @@
     </form>
   </div>
 
-  <div id="app35" class="mb">
+  <div id="app35" class="mb  ml">
+    <h1 class="small-h1">動作確認35(右クリック)</h1>
     <div id="app35-main"
       v-on:click.left="onleftclick"
       v-on:click.right.prevent="onrightclick">
