@@ -30,6 +30,37 @@
     <my-calculator step="-1" v-on:plus="onplus"></my-calculator>
   </div>
 
+<!-- スロット -->
+  <div id="app6">
+    <hello-slot>田中</hello-slot>
+    <hello-slot></hello-slot>
+  </div>
+
+  <div id="app7">
+    <my-slot>
+      <template v-slot:header>
+        <h3>ようこそVue.jsへ</h3>
+      </template>
+
+      <p>頑張りましょう！</p>
+
+      <!-- v-slotは#で省略することができる -->
+      <template #footer>
+        <span>Written by satou</span>
+      </template>
+
+      <p>質問は掲示板へ</p>
+    </my-slot>
+  </div>
+
+  <div id="app8">
+    <my-book>
+      <template v-slot:default="slotProp">
+        {{ slotProp.book.title }} ({{ slotProp.book.price }}円)
+      </template>
+    </my-book>
+  </div>
+
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
   <script src="component.js"></script>
 </body>

@@ -75,11 +75,11 @@ Vue.component('my-counter', {
     }
   }
 });
-
 new Vue({
   el: '#app4',
 });
 
+//子コンポーネントから親コンポーネントへの伝達
 Vue.component('my-calculator', {
   props: [ 'step' ],
   template: `<button type="button" v-on:click="onclick">{{ step }}</button>`,
@@ -89,7 +89,6 @@ Vue.component('my-calculator', {
     }
   }
 });
-
 new Vue({
   el: "#app5",
   data: {
@@ -100,4 +99,47 @@ new Vue({
       this.current += e;
     }
   }
+})
+
+//スロット
+Vue.component('hello-slot', {
+  template: `<div>こんにちは、<slot>ゲスト</slot>さん</div>`,
+});
+new Vue({
+  el: '#app6',
+});
+
+Vue.component('my-slot', {
+  template: `<div>
+    <header>
+      <slot name="header">DEFAULT HEADER</slot>
+    </header>
+    <div>
+      <slot>DEFAULT MAIN</slot>
+    </div>
+    <footer>
+      <slot name="footer">DEFAULT FOOTER</slot>
+    </footer>
+  </div>`
+});
+new Vue({
+  el:'#app7'
+});
+
+Vue.component('my-book', {
+  data: function() {
+    return {
+      book: {
+        title: 'サンプル１',
+        price: 1500,
+        author: '佐藤',
+      }
+    };
+  },
+  template: `<div>
+    <slot v-bind:book="book">{{ book.title }} ({{ book.publish }})</slot>
+  </div>`
+});
+new Vue({
+  el: "#app8",
 })
