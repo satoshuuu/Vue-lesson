@@ -61,6 +61,23 @@
     </my-book>
   </div>
 
+  <div id="app9">
+    <component v-bind:is="currentBanner"/>
+  </div>
+
+  <div id="app10">
+    <div id="container">
+      <ul>
+        <li v-for="tab in tabNames">
+          <a href="#" v-on:click.prevent="onclick(tab)">{{ tabs[tab] }}</a>
+        </li>
+      </ul>
+      <keep-alive>
+        <component v-bind:is="currentTab"></component>
+      </keep-alive>
+    </div>
+  </div>
+
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
   <script src="component.js"></script>
 </body>
