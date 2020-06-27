@@ -244,3 +244,40 @@ new Vue({
     }
   }
 });
+
+Vue.component('my-input', {
+  props: ['value'],
+  // model: {
+  //   prop: 'name',
+  //   event: 'change'
+  // },
+  template: `<label>
+    名前：
+    <input type="text" v-model="internalValue">
+  </label>`,
+  // template: `<label>
+  //   名前：
+  //   <input
+  //     type="text" v-bind:value="name"
+  //     v-on:input="$emit('change', $event.target.value)">
+  // </label>`
+
+  computed: {
+    internalValue: {
+      get() {
+        return this.value;
+      },
+      set(newValue) {
+        if(this.value !== newValue) {
+          this.$emit('input', newValue);
+        }
+      }
+    }
+  }
+});
+new Vue({
+  el: '#app11',
+  data: {
+    message: ''
+  }
+});
