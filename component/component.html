@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Component lesson</title>
+  <link rel="stylesheet" href="../style/component.css">
 </head>
 <body>
   <div id="app1">
@@ -81,6 +82,18 @@
   <div id="app11">
     <my-input v-model="message"></my-input>
     <p>入力値：{{ message }}</p>
+  </div>
+
+  <!-- アニメーション -->
+  <div id="app12">
+    <input type="button" value="表示/非表示" v-on:click="onclick">
+    <transition>
+      <div id="panel" v-show="flag">おはようございます！今日も1日頑張りましょう！
+        おはようございます！今日も1日頑張りましょう！おはようございます！今日も1日頑張りましょう！
+        おはようございます！今日も1日頑張りましょう！おはようございます！今日も1日頑張りましょう！
+        おはようございます！今日も1日頑張りましょう！おはようございます！今日も1日頑張りましょう！
+      </div>
+    </transition>
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>

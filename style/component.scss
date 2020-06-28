@@ -1,0 +1,39 @@
+#panel {
+  border: 1px solid #000;
+  width: 350px;
+  overflow: hidden;
+}
+
+//スライドイン・スライドアウトの実装
+// アニメーションの最中
+// .v-enter-active, .v-leave-active {
+//   transition: height 1s;
+// }
+
+// //要素が追加（表示）される時のアニメーションの最初の状態
+// .v-enter {
+//   height: 0px;
+// }
+// //要素が追加（表示）される時のアニメーションの最後の状態
+// .v-enter-to {
+//   height: 200px;
+// }
+// //要素が破棄（非表示）される時のアニメーションの最初の状態
+// .v-leave {
+//   height: 200px;
+// }
+// //要素が破棄（非表示）される時のアニメーションの最後の状態
+// .v-leave-to {
+//   height: 0px;
+// }
+
+// フェードイン、フェードアウトの実装
+.v-enter-active, .v-leave-active {
+  transition: opacity 3s;
+}
+// 同じ値は統合できる
+//opacityの規定は1.0であるため、省略することができる
+.v-enter, .v-leave-to {
+  opacity: 0.0;
+}
+

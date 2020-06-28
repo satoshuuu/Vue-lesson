@@ -281,3 +281,15 @@ new Vue({
     message: ''
   }
 });
+
+new Vue({
+  el: '#app12',
+  data: {
+    flag: true,
+  },
+  methods: {
+    onclick: function() {
+      this.flag = !this.flag;
+    }
+  }
+})

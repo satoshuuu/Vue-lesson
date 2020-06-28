@@ -1,0 +1,15 @@
+#panel {
+  border: 1px solid #000;
+  width: 350px;
+  overflow: hidden;
+}
+
+.v-enter-active, .v-leave-active {
+  -webkit-transition: opacity 3s;
+  transition: opacity 3s;
+}
+
+.v-enter, .v-leave-to {
+  opacity: 0.0;
+}
+/*# sourceMappingURL=component.css.map */
