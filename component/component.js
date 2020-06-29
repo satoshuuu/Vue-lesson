@@ -293,3 +293,32 @@ new Vue({
     }
   }
 });
+
+new Vue({
+  el: "#app13",
+  data: {
+    id: 0,
+    panels: [
+      'おはようございます',
+      'こんにちは',
+      'こんばんは'
+    ],
+  },
+  methods: {
+    onclick: function () {
+      this.id = (this.id + 1) % this.panels.length;
+    }
+  }
+});
+
+new Vue({
+  el: '#app14',
+  data: {
+    flag: true,
+  },
+  methods: {
+    onclick: function () {
+      this.flag = !this.flag;
+    }
+  }
+});

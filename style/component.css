@@ -1,4 +1,4 @@
-#panel {
+.panels {
   border: 1px solid #000;
   width: 350px;
   overflow: hidden;
@@ -47,5 +47,24 @@
 
 .panel-leave-active {
   animation: slide-in 1.5s reverse;
+}
+
+.greet-leave-active, .greet-leave-active {
+  -webkit-transition: opacity 1.5s;
+  transition: opacity 1.5s;
+}
+
+.greet-leave-active {
+  position: absolute;
+}
+
+.greet-enter, .greet-leave-to {
+  opacity: 0.0;
+}
+
+.panel {
+  border: 1px solid black;
+  width: 350px;
+  overflow: hidden;
 }
 /*# sourceMappingURL=component.css.map */

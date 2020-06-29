@@ -6,8 +6,10 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Component lesson</title>
   <link rel="stylesheet" href="../style/component.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css">
 </head>
 <body>
+  <h1 class="animate__animated animate__bounce">Vue.js</h1>
   <div id="app1">
     <my-hello></my-hello>
   </div>
@@ -89,7 +91,7 @@
     <input type="button" value="表示/非表示" v-on:click="onclick">
     <!-- appear属性を付与することでページ初回表示の際もアニメーションさせることができる -->
     <transition appear name="panel">
-      <div id="panel" v-show="flag">おはようございます！今日も1日頑張りましょう！
+      <div class="panels" v-show="flag">おはようございます！今日も1日頑張りましょう！
         おはようございます！今日も1日頑張りましょう！おはようございます！今日も1日頑張りましょう！
         おはようございます！今日も1日頑張りましょう！おはようございます！今日も1日頑張りましょう！
         おはようございます！今日も1日頑張りましょう！おはようございます！今日も1日頑張りましょう！
@@ -107,6 +109,28 @@
       </transition>
       どちらかしか表示されないため、実質単一の要素
      -->
+  </div>
+
+  <div id="app13">
+    <input type="button" value="切り替え" v-on:click="onclick">
+    <!-- mode属性でenter,leaveのタイミングを制御することができる -->
+    <transition mode="out-in" name="greet">
+      <div class="panel" v-bind:key="id">
+        {{ panels[id] }}
+      </div>
+    </transition>
+  </div>
+
+  <!-- animate.cssとの連携 -->
+  <div id="app14">
+    <input type="button" value="表示/非表示" v-on:click="onclick">
+    <transition
+      enter-active-class="animate__animated animate__rollIn"
+      leave-active-class="animate__animated animate__rollOut">
+      <div class="panels" v-show="flag">
+        トランジションクラスを置き換えるとanimate.cssとの連携が簡単です。
+      </div>
+    </transition>
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
