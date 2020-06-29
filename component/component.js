@@ -292,4 +292,4 @@ new Vue({
       this.flag = !this.flag;
     }
   }
-})
+});

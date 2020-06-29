@@ -87,13 +87,26 @@
   <!-- アニメーション -->
   <div id="app12">
     <input type="button" value="表示/非表示" v-on:click="onclick">
-    <transition>
+    <!-- appear属性を付与することでページ初回表示の際もアニメーションさせることができる -->
+    <transition appear name="panel">
       <div id="panel" v-show="flag">おはようございます！今日も1日頑張りましょう！
         おはようございます！今日も1日頑張りましょう！おはようございます！今日も1日頑張りましょう！
         おはようございます！今日も1日頑張りましょう！おはようございます！今日も1日頑張りましょう！
         おはようございます！今日も1日頑張りましょう！おはようございます！今日も1日頑張りましょう！
       </div>
     </transition>
+    <!-- 
+      transition要素の中は単一でなくても良いパターン
+      <transition>
+        <div id="panel" v-if="flag" key="p1">
+          おはようございます！
+        </div>
+        <div id="empty" v-else key="p2">
+          パネルは非表示です
+        <div>
+      </transition>
+      どちらかしか表示されないため、実質単一の要素
+     -->
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>

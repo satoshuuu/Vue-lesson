@@ -27,13 +27,36 @@
 //   height: 0px;
 // }
 
-// フェードイン、フェードアウトの実装
-.v-enter-active, .v-leave-active {
-  transition: opacity 3s;
-}
-// 同じ値は統合できる
-//opacityの規定は1.0であるため、省略することができる
-.v-enter, .v-leave-to {
-  opacity: 0.0;
+// // フェードイン、フェードアウトの実装
+// .v-enter-active, .v-leave-active {
+//   transition: opacity 3s;
+// }
+// // 同じ値は統合できる
+// //opacityの規定は1.0であるため、省略することができる
+// .v-enter, .v-leave-to {
+//   opacity: 0.0;
+// }
+
+//キーフレームによるアニメーションの実行
+@keyframes slide-in {
+  0% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  10% {
+    transform: translateX(20%);
+    opacity: 0.2;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
 }
 
+.panel-enter-active {
+  animation: slide-in 1.5s;
+}
+
+.panel-leave-active {
+  animation: slide-in 1.5s reverse;
+}
