@@ -67,4 +67,20 @@
   width: 350px;
   overflow: hidden;
 }
+
+.todo-enter-active, .todo-leave-active, .todo-move {
+  -webkit-transition: -webkit-transform 1s;
+  transition: -webkit-transform 1s;
+  transition: transform 1s;
+  transition: transform 1s, -webkit-transform 1s;
+}
+
+.todo-enter, .todo-leave-to {
+  -webkit-transform: translateX(30%);
+          transform: translateX(30%);
+}
+
+.todo-leave-active {
+  position: absolute;
+}
 /*# sourceMappingURL=component.css.map */

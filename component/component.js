@@ -322,3 +322,31 @@ new Vue({
     }
   }
 });
+
+new Vue({
+  el: '#app15',
+  data: {
+    todo: '',
+    items: [
+      'これからはじめるVue.js実践入門',
+      'いちばんやさしいITパスポート',
+      'アウトプット大全',
+    ],
+  },
+  methods: {
+    onadd: function() {
+      this.items.unshift(this.todo);
+      this.todo = '';
+    },
+    onremove: function() {
+      let that = this;
+      this.items = this.items.filter(function(value) {
+        return value !== that.todo;
+      });
+      this.todo = '';
+    },
+    onsort: function() {
+      this.items.sort();
+    }
+  }
+});
