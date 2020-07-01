@@ -150,6 +150,32 @@
     </div>
   </div>
 
+  <!-- インラインテンプレート -->
+  <div id="app17">
+    <my-night inline-template>
+      <p>こんばんは、{{ name }}さん</p>
+    </my-night>
+  </div>
+
+  <!-- renderオプション -->
+  <div id="app18">
+    <!-- text or image -->
+    <my-loading type="text"></my-loading>
+  </div>
+
+  <!-- functionalオプション -->
+  <div id="app19">
+    <my-random v-bind:min="0" v-bind:max="100"></my-random>
+  </div>
+
+  <!-- x-template -->
+  <div id="app16">
+    <my-greet></my-greet>
+  </div>
+  <script type="text/x-template" id="my-greet">
+    <div>こんにちは！{{ name }}さん！</div>
+  </script>
+
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
   <script src="component.js"></script>
 </body>

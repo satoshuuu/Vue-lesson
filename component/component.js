@@ -350,3 +350,69 @@ new Vue({
     }
   }
 });
+
+Vue.component('my-greet', {
+  template: '#my-greet',
+  data: function() {
+    return {
+      name: 'Vue.js'
+    };
+  }
+});
+new Vue({
+  el: '#app16'
+});
+
+Vue.component('my-night', {
+  data: function() {
+      return {
+        name: 'Vue.js'
+      }
+    }
+});
+
+new Vue({
+  el: '#app17'
+})
+
+Vue.component('my-loading', {
+  props: [ 'type' ],
+  render: function(h) {
+    switch (this.type) {
+      case 'text':
+        return h('p', '...Now Loading...');
+      case 'image':
+        return h('img', {
+          attrs: {
+            src: '../image/loading.jpg',
+            alt: 'loading'
+          }
+        });
+        default:
+          console.error('type属性はimage、textいずれかで設定してください');
+          return null;
+    }
+  }
+});
+
+new Vue({
+  el: '#app18'
+});
+
+Vue.component('my-random', {
+  // 関数型コンポーネント
+  functional: true,
+  props: [ 'min' , 'max'],
+  render: function(h, context) {
+    let min = context.props.min;
+    let max = context.props.max;
+
+    let result = Math.floor(Math.random() * (max - min + 1) + min);
+
+    return h('p', result);
+  }
+});
+
+new Vue({
+  el: '#app19'
+})
