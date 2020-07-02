@@ -7,6 +7,37 @@
   <title>parts technology</title>
 </head>
 <body>
-  
+  <!-- ディレクティブの自作 -->
+  <div id="app1">
+    <select v-model="backColor">
+      <option value="yellow">黄色</option>
+      <option value="red">赤色</option>
+      <option value="blue">青色</option>
+    </select>
+    <p>
+      <!-- .border修飾子で背景ハイライトか枠線ハイライトかを選択 .once修飾子で一度だけ更新 -->
+      おはようございます！今日も<span v-highlight.border.once="backColor">筋トレ</span><span v-importantcolor="color">頑張り</span>ましょう！
+    </p>
+  </div>
+
+  <!-- 引数付きのディレクティブを定義 -->
+  <div id="app2">
+    <p>こんにちは！今日も
+      <!-- 引数border or bg or text -->
+      <span v-highlight2:border="color">勉強</span>
+        頑張りましょう！
+    </p>
+  </div>
+
+  <div id="app3">
+    <p>
+      こんばんは！今日も
+      <span v-highlight3="color">買い物</span>
+      に行きましょう！
+    </p>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="create.js"></script>
 </body>
 </html>
