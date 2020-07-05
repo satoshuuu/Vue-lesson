@@ -82,3 +82,66 @@ new Vue({
     color: 'yellow',
   }
 });
+
+// フィルター
+Vue.filter('trim', function (value) {
+  if (typeof value !== 'string') {
+    return value;
+  }
+  return value.trim();
+});
+
+new Vue({
+  el: '#app4',
+  data: {
+    str: '  こんにちは'
+  }
+});
+
+Vue.filter('nl2br', function(value) {
+  if(typeof value !== 'string') {
+    return value;
+  }
+  // 改行文字の置換
+  return value.replace(/\r?\n/g, '<br />');
+});
+
+new Vue({
+  el: '#app5',
+  data: {
+    memo: '',
+  }
+});
+
+Vue.filter('truncate', function (value, len = 10, omit = '...') {
+  if (typeof value !== 'string') {
+    return value;
+  }
+  if (value.length <= len) {
+    return value;
+  } else {
+    return value.substring(0, len) + omit;
+  }
+});
+
+new Vue({
+  el: '#app6',
+  data: {
+    memo: ''
+  }
+});
+
+Vue.filter('abs', function(value) {
+  return Math.abs(value);
+});
+
+Vue.filter('number', function(value, dec = 0) {
+  return value.toFixed(dec);
+});
+
+new Vue({
+  el: '#app7',
+  data: {
+    value: 1524.3487
+  }
+});

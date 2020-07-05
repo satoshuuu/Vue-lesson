@@ -37,6 +37,27 @@
     </p>
   </div>
 
+  <!-- フィルター -->
+  <div id="app4">
+    <div v-bind:title="str | trim">str: 「{{ str | trim }}」</div>
+  </div>
+
+  <div id="app5">
+    <textarea v-model="memo" cols="30" rows="10"></textarea>
+    <div v-bind:inner-html.prop="memo | nl2br"></div>
+  </div>
+
+  <div id="app6">
+    <textarea v-model="memo" cols="30" rows="10"></textarea>
+    <div>{{ memo | truncate }}</div>
+    <div>{{ memo | truncate(20, '~') }}</div>
+  </div>
+
+  <div id="app7">
+    <div>元の数字：{{ value }}</div>
+    <div>加工後：{{ value | abs | number(2) }}</div>
+  </div>
+
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
   <script src="create.js"></script>
 </body>
