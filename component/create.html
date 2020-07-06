@@ -58,6 +58,36 @@
     <div>加工後：{{ value | abs | number(2) }}</div>
   </div>
 
+  <div id="app8">
+    <form>
+      <label for="name">氏名：</label>
+      <!-- requiredで必須であると定め、maxで文字数制限を定める -->
+      <input v-validate="'required|max: 10'" data-vv-as="氏名" id="name" name="name">
+      <span v-show="errors.has('name')">{{ errors.first('name') }}</span><br>
+      <label for="age">年齢：</label>
+      <!-- numericで数値かどうか、betweenで範囲を指定 -->
+      <input v-validate="{ numeric:true, between: [20, 60] }" data-vv-as="年齢" id="age" name="age" type="number">
+      <span v-show="errors.has('age')">{{ errors.first('age') }}</span><br>
+      <label for="sex">性別</label>
+      <!-- includedでいずれかの選択 -->
+      <select v-validate="'included:男,女,その他'" id="sex" data-vv-as="性別" name="sex">
+        <option value="男">男性</option>
+        <option value="女">女性</option>
+        <option value="その他">その他</option>
+      </select>
+      <span v-show="errors.has('sex')">{{ errors.first('sex') }}</span><br>
+    </form>
+  </div>
+
+  <div id="app9">
+    <form>
+      <label for="memo">メモ：</label>
+      <textarea name="memo" id="memo" cols="30" rows="10" v-validate="'ngword:バカ,アホ,死ね'" data-vv-as="メモ"></textarea>
+      <span v-show="errors.has('memo')">{{ errors.first('memo') }}</span>
+    </form>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vee-validate@<3.0.0/dist/vee-validate.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
   <script src="create.js"></script>
 </body>
