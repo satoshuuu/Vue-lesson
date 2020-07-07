@@ -171,6 +171,26 @@ new Vue({
   },
 });
 
+let MyUtil = {
+  install : function(Vue, options) {
+    Vue.filter('trim', function (value) {
+      if (typeof value !== 'string') {
+        return value;
+      }
+      return value.trim();
+    });
+  }
+}
+
 new Vue({
   el: '#app10'
+});
+
+Vue.use(MyUtil);
+
+new Vue({
+  el: '#app11',
+  data: {
+    str: '  自作プラグインのフィルターによる空白の除去　'
+  }
 });
