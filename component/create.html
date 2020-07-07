@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>parts technology</title>
+  <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+  <link rel="stylesheet" href="../style/create.css">
 </head>
 <body>
   <!-- ディレクティブの自作 -->
@@ -87,8 +89,28 @@
     </form>
   </div>
 
-  <script src="https://cdn.jsdelivr.net/npm/vee-validate@<3.0.0/dist/vee-validate.js"></script>
+  <div id="app10">
+    <el-carousel :interval="5000" arrow="hover">
+      <el-carousel-item>
+        <div>
+          <h3>CatCafe</h3>
+          <p>猫カフェへようこそ！</p>
+          <img src="../image/image3.png">
+        </div>
+      </el-carousel-item>
+      <el-carousel-item>
+        <div>
+          <h3>勉強会</h3>
+          <p>Vue.jsの勉強をみんなで頑張りましょう！</p>
+          <a href="">こちら</a>
+        </div>
+      </el-carousel-item>
+    </el-carousel>
+  </div>
+
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vee-validate@<3.0.0/dist/vee-validate.js"></script>
+  <script src="https://unpkg.com/element-ui/lib/index.js"></script>
   <script src="create.js"></script>
 </body>
 </html>

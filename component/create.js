@@ -156,6 +156,7 @@ Vue.use(VeeValidate, { locale: 'ja', fastExit: false });
 
 new Vue({
   el: '#app9',
+  // 検証ルールはcreated時に宣言するのが一般的
   created:function() {
     this.$validator.extend('ngword', {
       getMessage(field, args) {
@@ -168,4 +169,8 @@ new Vue({
       }
     });
   },
+});
+
+new Vue({
+  el: '#app10'
 });
