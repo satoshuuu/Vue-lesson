@@ -194,3 +194,51 @@ new Vue({
     str: '  自作プラグインのフィルターによる空白の除去　'
   }
 });
+
+Vue.config.optionMergeStrategies.tags = function(toVal, fromVal) {
+  if(!toVal) { toVal = []; }
+  if(!fromVal) { fromVal = []; }
+  return fromVal.concat(toVal);
+};
+
+let tagin = {
+  tags: ['tag','strategy']
+};
+
+Vue.component('my-comp', {
+  tags: ['component', 'sample'],
+  template: `<div>{{ $options.tags }}</div>`,
+  mixins:[ tagin ,]
+});
+
+new Vue({
+  el: '#app12',
+});
+
+Vue.mixin({
+  created: function() {
+    let { title, keyword, description } = this.$data;
+    if(title) { document.title = title; }
+    if(keyword) {
+      document.querySelector("meta[name='keyword']").setAttribute('content', keyword);
+    }
+    if(description) {
+      document.querySelector("meta[name='description']").setAttribute('content', description);
+    }
+  }
+});
+
+Vue.component('my-mix', {
+  template: `<div>Global Mix-In!!</div>`,
+  data: function() {
+    return {
+      title: 'グローバルミックスイン',
+      keyword: 'mixin, vue.js, component',
+      description: 'アプリ全体に適用されるミックスインの例です。'
+    };
+  }
+});
+
+new Vue({
+  el: '#app13'
+});
