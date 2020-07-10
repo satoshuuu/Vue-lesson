@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>カーソル合わせ</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="app">
+    <h1 class="mt">カーソル合わせ</h1>
+      <div id="scoreboard" class="mt">
+      <p>offset: {{ offsetX }}/{{ offsetY }}</p>
+      <p>point: {{ pointX }}/{{ pointY }}</p>
+      <p>score: {{ score }}</p>
+    </div>
+    <div id="container" v-on:mousemove="onmousemove"></div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
