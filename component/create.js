@@ -232,7 +232,7 @@ Vue.component('my-mix', {
   template: `<div>Global Mix-In!!</div>`,
   data: function() {
     return {
-      title: 'グローバルミックスイン',
+      title: '部品化技術',
       keyword: 'mixin, vue.js, component',
       description: 'アプリ全体に適用されるミックスインの例です。'
     };

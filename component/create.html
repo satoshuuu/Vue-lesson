@@ -13,6 +13,7 @@
 <body>
   <!-- ディレクティブの自作 -->
   <div id="app1">
+    <h2>選択することで枠線の色が変わる</h2>
     <select v-model="backColor">
       <option value="yellow">黄色</option>
       <option value="red">赤色</option>
@@ -26,6 +27,7 @@
 
   <!-- 引数付きのディレクティブを定義 -->
   <div id="app2">
+    <h2>引数つきのディレクティブを定義</h2>
     <p>こんにちは！今日も
       <!-- 引数border or bg or text -->
       <span v-highlight2:border="color">勉強</span>
@@ -34,6 +36,7 @@
   </div>
 
   <div id="app3">
+    <h2>ホバー時のアクション</h2>
     <p>
       こんばんは！今日も
       <span v-highlight3="color">買い物</span>
@@ -43,26 +46,31 @@
 
   <!-- フィルター -->
   <div id="app4">
+    <h2>フィルターの作成(前後空白の削除)</h2>
     <div v-bind:title="str | trim">str: 「{{ str | trim }}」</div>
   </div>
 
   <div id="app5">
+    <h2>フィルターの作成(改行文字の置換)</h2>
     <textarea v-model="memo" cols="30" rows="10"></textarea>
     <div v-bind:inner-html.prop="memo | nl2br"></div>
   </div>
 
   <div id="app6">
+    <h2>フィルターの作成(規定文字数を超えた場合の処理)</h2>
     <textarea v-model="memo" cols="30" rows="10"></textarea>
     <div>{{ memo | truncate }}</div>
     <div>{{ memo | truncate(20, '~') }}</div>
   </div>
 
   <div id="app7">
+    <h2>フィルターの作成(小数点第2位以下四捨五入)</h2>
     <div>元の数字：{{ value }}</div>
     <div>加工後：{{ value | abs | number(2) }}</div>
   </div>
 
   <div id="app8">
+    <h2>VeeValidateによるバリデーション</h2>
     <form>
       <label for="name">氏名：</label>
       <!-- requiredで必須であると定め、maxで文字数制限を定める -->
@@ -84,14 +92,16 @@
   </div>
 
   <div id="app9">
+    <h2>VeeValidateによるバリデーション(バカ、アホをNGワードとする)</h2>
     <form>
       <label for="memo">メモ：</label>
-      <textarea name="memo" id="memo" cols="30" rows="10" v-validate="'ngword:バカ,アホ,死ね'" data-vv-as="メモ"></textarea>
+      <textarea name="memo" id="memo" cols="30" rows="10" v-validate="'ngword:バカ,アホ'" data-vv-as="メモ"></textarea>
       <span v-show="errors.has('memo')">{{ errors.first('memo') }}</span>
     </form>
   </div>
 
   <div id="app10">
+    <h2>ElementによるUIの実装</h2>
     <el-carousel :interval="5000" arrow="hover">
       <el-carousel-item>
         <div>
@@ -112,15 +122,18 @@
 
   <!-- プラグインの自作 -->
   <div id="app11">
+    <h2>プラグインの自作</h2>
     <div v-bind:title="str | trim">str: 「{{ str | trim }}」</div>
   </div>
 
 <!-- ミックスイン -->
   <div id="app12">
+    <h2>ミックスインの組込み</h2>
     <my-comp></my-comp>
   </div>
 
   <div id="app13">
+    <h2>ミックスインによる指定</h2>
     <my-mix></my-mix>
   </div>
 
